@@ -9,8 +9,13 @@ def minOperations(n):
     """
     if n <= 1:
         return 0
-    m = float("inf")
-    for i in range(1, n//2+1):
-        if n % i == 0:
-            m = min(m, i + n//i)
-    return m
+
+    num, div, res = n, 2, 0
+
+    while num > 1:
+        if num % div == 0:
+            num /= div
+            res += div
+        else:
+            div += 1
+    return res
