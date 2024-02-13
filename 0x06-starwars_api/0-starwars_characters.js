@@ -1,9 +1,9 @@
 #!/usr/bin/node
-const request = require("request");
+const request = require('request');
 const url = `https://swapi-api.hbtn.io/api/films/${process.argv[2]}/`;
 request(url, async function (error, response, body) {
   if (error) {
-    console.error("error:", error);
+    console.error('error:', error);
   }
   const data = JSON.parse(body);
   for (const film of data.characters) {
@@ -11,11 +11,11 @@ request(url, async function (error, response, body) {
   }
 });
 
-async function getCharacter(url) {
+async function getCharacter (url) {
   return new Promise((resolve, reject) => {
     request(url, async function (error, response, body) {
       if (error) {
-        console.error("error:", error);
+        console.error('error:', error);
       }
       const data = JSON.parse(body);
       resolve(data.name);
