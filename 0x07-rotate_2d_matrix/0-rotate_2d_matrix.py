@@ -4,4 +4,4 @@
 
 def rotate_2d_matrix(matrix):
     """ Rotate 2D Matrix """
-    matrix[::] = list(zip(*matrix[::-1]))
+    matrix[::] = [list(i) for i in zip(*matrix[::-1])]
